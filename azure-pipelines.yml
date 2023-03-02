@@ -11,9 +11,12 @@ pool:
 
 variables:
   tanisha: Koushik
+  GABBAR: VIJAYA LAXMI
 
 
 steps:
+   - script: |
+        echo $(GABBAR)
    - bash: echo $(tanisha)
 
 
