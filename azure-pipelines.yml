@@ -18,7 +18,19 @@ steps:
        KeyVaultName: 'variableaccestodevops'
        SecretsFilter: '*'
        RunAsPreJob: false
-   - bash: echo $(DATABASE-PASSWD)   
+
+   - script: | 
+       echo $(DATABASE-PASSWD) > dbpasswd.txt
+   - task: CopyFiles@2
+     inputs:
+       Contents: 'dbpasswd.txt'
+       TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+   - task: PublishBuildArtifacts@1
+     inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'secret'
+        publishLocation: 'Container'
  
 
 
