@@ -20,7 +20,7 @@ steps:
        RunAsPreJob: false
 
    - script: | 
-       echo $(DATABASE-PASSWD) > dbpasswd.txt
+       echo $(DATABASEPASSWD01) > dbpasswd.txt
    - task: CopyFiles@2
      inputs:
        Contents: 'dbpasswd.txt'
