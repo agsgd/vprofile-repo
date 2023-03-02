@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: spouse
+  - group: personal details
 
 steps:
    - script: |
