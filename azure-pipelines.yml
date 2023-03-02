@@ -9,12 +9,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  - group: personal details
+
 
 steps:
-   - script: |
-        echo $(GABBARSINGH)
+   - task: AzureKeyVault@2
+     inputs:
+       azureSubscription: 'ags-az(1)(286d8ce0-9043-45a8-871e-f25fe6c7aa5d)'
+       KeyVaultName: 'variableaccestodevops'
+       SecretsFilter: '*'
+       RunAsPreJob: false
+   - bash: echo $(DATABASE-PASSWD)   
  
 
 
