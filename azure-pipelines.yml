@@ -18,6 +18,9 @@ steps:
    - script: |
         echo $(GABBAR)
    - bash: echo $(tanisha)
+   - script: |
+        echo $(GABBAR)
+   - bash: echo ${{ variable.GABBAR }}
 
 
 
