@@ -9,20 +9,12 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  tanisha: Koushik
-  GABBAR: VIJAYA LAXMI
 
 
 steps:
    - script: |
-        echo $(GABBAR)
-   - bash: echo $(tanisha)
-
-   - bash: echo $(GABBAR)
-   - script: |
-       echo ${{variables.GABBAR}}
-
+        echo $(GABBARSINGH)
+ 
 
 
 # - task: Maven@3
