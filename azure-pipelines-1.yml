@@ -31,6 +31,11 @@ steps:
      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
      ArtifactName: 'drop'
      publishLocation: 'Container'
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: 'drop'
+    Contents: '**.war'
+    TargetFolder: '/'
 - task: Docker@2
   inputs:
     containerRegistry: 'Service connection ACR'
