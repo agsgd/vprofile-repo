@@ -32,6 +32,13 @@ steps:
      ArtifactName: 'drop'
      publishLocation: 'Container'
 
+
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: '**.war'
+    downloadPath: '$(System.ArtifactsDirectory)'
 - task: Docker@2
   inputs:
     containerRegistry: 'Service connection ACR'
