@@ -37,7 +37,7 @@ steps:
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: '**.war'
+    artifactName: '$(Build.ArtifactStagingDirectory)/**.war'
     downloadPath: '$(System.ArtifactsDirectory)'
 - task: Docker@2
   inputs:
