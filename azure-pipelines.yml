@@ -11,36 +11,33 @@ pool:
 
 
 
-steps:
-   - task: AzureKeyVault@2
+ steps:
+#    - task: AzureKeyVault@2
+#      inputs:
+#        azureSubscription: 'ags-az(1)(286d8ce0-9043-45a8-871e-f25fe6c7aa5d)'
+#        KeyVaultName: 'variableaccestodevops'
+#        SecretsFilter: '*'
+#        RunAsPreJob: false
+
+#    - script: | 
+#        echo $(DATABASEPASSWD01) > dbpasswd.txt
+#    - task: CopyFiles@2
+#      inputs:
+#        Contents: 'dbpasswd.txt'
+#        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+#    - task: PublishBuildArtifacts@1
+#      inputs:
+#         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#         ArtifactName: 'secret'
+#         publishLocation: 'Container'
+
+   - task: Ansible@0
      inputs:
-       azureSubscription: 'ags-az(1)(286d8ce0-9043-45a8-871e-f25fe6c7aa5d)'
-       KeyVaultName: 'variableaccestodevops'
-       SecretsFilter: '*'
-       RunAsPreJob: false
-
-   - script: | 
-       echo $(DATABASEPASSWD01) > dbpasswd.txt
-   - task: CopyFiles@2
-     inputs:
-       Contents: 'dbpasswd.txt'
-       TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-   - task: PublishBuildArtifacts@1
-     inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'secret'
-        publishLocation: 'Container'
- 
-
-
-# - task: Maven@3
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     mavenOptions: '-Xmx3072m'
-#     javaHomeOption: 'JDKVersion'
-#     jdkVersionOption: '1.8'
-#     jdkArchitectureOption: 'x64'
-#     publishJUnitResults: true
-#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#     goals: 'package'
+       ansibleInterface: 'remoteMachine'
+       connectionOverSsh: 'ansible connection'
+       playbookSourceRemoteMachine: 'ansibleMachine'
+       playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1'
+       inventoriesRemoteMachine: 'file'
+       inventoryFileSourceRemoteMachine: 'ansibleMachine'
+       inventoryFileAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1'
