@@ -59,12 +59,3 @@ steps:
 #     containerRegistry: 'Service connection ACR'
 #     repository: 'agsgd/azuredevops'
 #     command: 'push'
-- task: Ansible@0
-  inputs:
-    ansibleInterface: 'remoteMachine'
-    connectionOverSsh: 'ansible connection'
-    playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1'
-    inventoriesRemoteMachine: 'file'
-    inventoryFileSourceRemoteMachine: 'ansibleMachine'
-    inventoryFileAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1'
