@@ -46,6 +46,15 @@ steps:
 #     command: 'build'
 #     Dockerfile: '**/Dockerfile'
 # - task: Docker@2
+- task: Ansible@0
+  inputs:
+    ansibleInterface: 'remoteMachine'
+    connectionOverSsh: 'ansible connection'
+    playbookSourceRemoteMachine: 'ansibleMachine'
+    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1/playbook.yml'
+    inventoriesRemoteMachine: 'file'
+    inventoryFileSourceRemoteMachine: 'ansibleMachine'
+    inventoryFileAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1'
 #   inputs:
 #     containerRegistry: 'Service connection ACR'
 #     repository: 'agsgd/azuredevops'
