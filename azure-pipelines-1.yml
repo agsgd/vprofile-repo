@@ -51,7 +51,7 @@ steps:
     ansibleInterface: 'remoteMachine'
     connectionOverSsh: 'ansible connection'
     playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/docker.yaml'
+    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/she.yaml'
     inventoriesRemoteMachine: 'noInventory'
 #   inputs:
 #     containerRegistry: 'Service connection ACR'
