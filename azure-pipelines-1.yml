@@ -51,10 +51,8 @@ steps:
     ansibleInterface: 'remoteMachine'
     connectionOverSsh: 'ansible connection'
     playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1/playbook.yaml'
-    inventoriesRemoteMachine: 'file'
-    inventoryFileSourceRemoteMachine: 'ansibleMachine'
-    inventoryFileAnsibleMachineOnRemoteMachine: '/home/ubuntu/gabbar1/hosts'
+    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/plays/playbook.yaml'
+    inventoriesRemoteMachine: 'noInventory'
 #   inputs:
 #     containerRegistry: 'Service connection ACR'
 #     repository: 'agsgd/azuredevops'
