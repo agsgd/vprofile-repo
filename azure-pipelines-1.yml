@@ -11,6 +11,15 @@ pool:
   name: myagent
 
 steps:
+- bash: ls
+- script: |
+     ls /home/azureuser/agenthost
+
+
+
+
+
+
 # - task: Maven@4
 #   inputs:
 #     mavenPomFile: 'pom.xml'
@@ -46,13 +55,13 @@ steps:
 #     command: 'build'
 #     Dockerfile: '**/Dockerfile'
 # - task: Docker@2
-- task: Ansible@0
-  inputs:
-    ansibleInterface: 'remoteMachine'
-    connectionOverSsh: 'ansible connection'
-    playbookSourceRemoteMachine: 'ansibleMachine'
-    playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/she.yaml'
-    inventoriesRemoteMachine: 'noInventory'
+# - task: Ansible@0
+#   inputs:
+#     ansibleInterface: 'remoteMachine'
+#     connectionOverSsh: 'ansible connection'
+#     playbookSourceRemoteMachine: 'ansibleMachine'
+#     playbookPathAnsibleMachineOnRemoteMachine: '/home/ubuntu/she.yaml'
+#     inventoriesRemoteMachine: 'noInventory'
 #   inputs:
 #     containerRegistry: 'Service connection ACR'
 #     repository: 'agsgd/azuredevops'
