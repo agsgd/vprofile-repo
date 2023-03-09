@@ -12,7 +12,7 @@ pool:
 
 steps:
 - bash: ls /home/azureuser
-- bash: chmod 777 /home/azureuser/don.sh && ./home/azureuser/don.sh
+- bash: bash home/azureuser/don.sh
 
 
 
