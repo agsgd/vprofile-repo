@@ -15,6 +15,7 @@ steps:
 
 - bash: java -version
 - bash: echo $JAVA_HOME
+- bash: mvn --version
 
 - task: Maven@4
   inputs:
