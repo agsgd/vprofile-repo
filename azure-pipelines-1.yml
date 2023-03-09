@@ -9,7 +9,7 @@ trigger:
 
 pool:
   # vmImage: "ubuntu-latest"
-  name: myagent
+  name: default
 
 steps:
 - bash: ls /home/azureuser
