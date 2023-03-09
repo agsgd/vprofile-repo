@@ -8,7 +8,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: myagent
 
 steps:
 # - task: Maven@4
