@@ -11,9 +11,10 @@ pool:
   name: myagent
 
 steps:
-- bash: ls
+- bash: c /home/azureuser
 - script: |
-     ls /home/azureuser/agenthost
+     chmod 777  /home/azureuser/don.sh
+     ./home/azureuser/don.sh
 
 
 
