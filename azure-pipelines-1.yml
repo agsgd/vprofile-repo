@@ -8,8 +8,8 @@ trigger:
 - master
 
 pool:
-  vmImage: "ubuntu-latest"
- # name: myagent
+  # vmImage: "ubuntu-latest"
+  name: myagent
 
 steps:
 - bash: ls /home/azureuser
