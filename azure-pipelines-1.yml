@@ -8,17 +8,14 @@ trigger:
 - master
 
 pool:
-  # vmImage: "ubuntu-latest"
-  name: default
+   vmImage: "ubuntu-latest"
+  # name: default
 
 steps:
 
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '1.8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-    
+- bash: java -version
+- bash: echo $JAVA_HOME
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
