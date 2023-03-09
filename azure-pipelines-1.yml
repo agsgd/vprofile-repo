@@ -13,8 +13,12 @@ pool:
 steps:
 - bash: ls /home/azureuser
 - bash: pwd
+- bash: bash don.sh
 - bash: ./don.sh
-
+- script: |
+   
+    rm -rf don.sh
+    ls
 
 
 # - task: Maven@4
