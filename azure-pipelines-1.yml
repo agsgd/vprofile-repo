@@ -16,14 +16,11 @@ steps:
 - bash: pwd
 - bash: bash /home/azureuser/agenthost/don.sh
 
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '1.8.0'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: 'install'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
