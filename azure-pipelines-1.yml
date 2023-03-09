@@ -15,13 +15,7 @@ steps:
 - bash: pwd
 - bash: bash /home/azureuser/agenthost/don.sh
 
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'LocalDirectory'
-    jdkFile: '/usr/lib/jvm/java-1.8.0-openjdk-amd64'
-    cleanDestinationDirectory: true
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
