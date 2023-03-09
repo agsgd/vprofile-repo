@@ -12,11 +12,13 @@ pool:
   name: default
 
 steps:
-- bash: ls /home/azureuser
-- bash: pwd
-- bash: bash /home/azureuser/agenthost/don.sh
 
-
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '1.8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+    
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -29,11 +31,7 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '1.8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+'
 # - task: CopyFiles@2
 #   inputs:
 #     Contents: '**'
