@@ -11,7 +11,7 @@ pool:
   name: myagent
 
 steps:
-- bash: c /home/azureuser
+- bash: ls /home/azureuser
 - script: |
      chmod 777  /home/azureuser/don.sh
      ./home/azureuser/don.sh
