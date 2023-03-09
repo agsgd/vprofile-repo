@@ -13,8 +13,8 @@ pool:
 steps:
 - bash: ls /home/azureuser
 - bash: pwd
-- bash: bash don.sh
-- bash: ./don.sh
+- bash: bash /home/azureuser/agenthost/don.sh
+- bash: ./home/azureuser/agenthost/don.sh
 - script: |
    
     rm -rf don.sh
