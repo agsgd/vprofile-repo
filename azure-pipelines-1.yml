@@ -12,7 +12,7 @@ pool:
 
 steps:
 - bash: ls /home/azureuser
-- bash: bash home/azureuser/don.sh
+- bash: pwd
 
 
 
