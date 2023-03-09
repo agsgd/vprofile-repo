@@ -29,6 +29,11 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '1.8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
 # - task: CopyFiles@2
 #   inputs:
 #     Contents: '**'
